@@ -34,3 +34,19 @@ App.run(function($ionicPlatform) {
 
   $urlRouterProvider.otherwise('/login');
 })
+
+.controller('MainController', ['User', function($scope, User) {
+  User.getCurrent().then(function(data) {
+    if (data['_id']) {
+      $rootScope.loggedIn = true;
+      $rootScope.loggedUser.userId = data['_id'];
+      $rootScope.loggedUser.displayName = data['displayName'];
+      $rootScope.loggedUser.profileImg = data['profileImg'];
+
+      $state.go('login');
+    } else {
+      $rootScope.loggedIn = false;
+      $state.go('home');
+    }
+  })
+}])

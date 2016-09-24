@@ -1,22 +1,25 @@
 <ion-view>
-  <ion-content class="login-container">
+  <ion-content class="login-container" scroll="false">
 
-    <div class="list login-page">
+    <div class="login-page">
       <div class="logo">
         <img src="img/logo.png">
       </div>
-      <form>
+      <form ng-submit="submit()">
         <label class="item item-input no-bg-color">
-          <label></label>
+          <span class="input-label">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </span>
           <input type="text" placeholder="Login">
         </label>
         <label class="item item-input no-bg-color">
+          <span class="input-label">
+            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+          </span>
           <input type="password" placeholder="Senha">
         </label>
-        <input type="button" value="Acessar" class="button button-block button-assertive activated">
+        <input type="submit" value="Acessar" class="button button-block button-assertive activated">
       </form>
     </div>
-    </ion-list>
-
   </ion-content>
 </ion-view>
