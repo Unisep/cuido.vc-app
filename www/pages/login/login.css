@@ -1,0 +1,26 @@
+.login-page .logo {
+  padding: 20px 0;
+  min-height: 200px;
+  text-align: center;
+}
+
+.login-page .logo img {
+  max-width: 320px;
+  margin-top: 40%;
+}
+
+.login-container {
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  height: 100%;
+  background: #ffffff url(../../img/background.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+.no-bg-color {
+  background-color: transparent !important;
+}
+
+.center {
+  text-align: center;
+}
