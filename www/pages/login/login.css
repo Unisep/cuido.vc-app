@@ -18,9 +18,18 @@
 }
 
 .no-bg-color {
-  background-color: transparent !important;
+  background-color: rgba(254, 249, 241, 0.8) !important;
+  border-bottom: 1px #717171;
 }
 
 .center {
   text-align: center;
+}
+
+.input-label{
+  width: 12% !important;
+}
+
+.gray {
+  color: #afabab;
 }
