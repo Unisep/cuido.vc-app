@@ -6,9 +6,9 @@
       </div>
 
       <label class="item item-input no-bg-color">
-        <span class="input-label"><i class="fa fa-user gray" aria-hidden="true"></i></span>
+        <span class="input-label"><i class="fa fa-envelope gray" aria-hidden="true"></i></span>
 
-        <input type="text" placeholder="Login" ng-model="account.user.email">
+        <input type="text" placeholder="Email" ng-model="account.user.email">
       </label>
 
       <label class="item item-input no-bg-color">
@@ -20,7 +20,7 @@
       <button class="button button-block button-assertive activated" ng-class="account.clicked ? 'activated' : ''" ng-click="account.login()">Acessar</button>
 
       <p class="text-center">
-        ou crie sua <b><a href="#">conta</a></b>
+        ou crie sua <b><a ui-sref="signup">conta</a></b>
       </p>
     </div>
   </ion-content>

@@ -1,0 +1,33 @@
+<ion-view>
+  <ion-content class="signup-container" scroll="false">
+    <div class="signup-page">
+      <div class="logo">
+        <img src="img/logo.png">
+      </div>
+
+      <label class="item item-input no-bg-color">
+        <span class="input-label"><i class="fa fa-user gray" aria-hidden="true"></i></span>
+
+        <input type="text" placeholder="Nome" ng-model="account.user.name">
+      </label>
+
+      <label class="item item-input no-bg-color">
+        <span class="input-label"><i class="fa fa-envelope gray" aria-hidden="true"></i></span>
+
+        <input type="text" placeholder="Email" ng-model="account.user.email" required="required">
+      </label>
+
+      <label class="item item-input no-bg-color">
+        <span class="input-label"><i class="fa fa-unlock-alt gray" aria-hidden="true"></i></span>
+
+        <input type="password" ng-model="account.user.password" placeholder="Senha">
+      </label>
+
+      <button class="button button-block button-assertive activated" ng-click="account.signup()">Criar Conta</button>
+
+      <p class="text-center">
+        <a ui-sref="login">já possui uma conta?</a>
+      </p>
+    </div>
+  </ion-content>
+</ion-view>

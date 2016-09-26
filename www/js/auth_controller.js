@@ -1,8 +1,7 @@
-angular.module('loginApp', [])
+angular.module('authApp', [])
 
 .controller('AccountController', ["AccountService", "$state", "$rootScope", "$ionicLoading", "$ionicPopup",
     function(AccountService, $state, $rootScope, $ionicLoading, $ionicPopup) {
-
 
   var errorHandler = function(options) {
     var errorAlert = $ionicPopup.alert({
@@ -19,7 +18,7 @@ angular.module('loginApp', [])
     Stamplay.User.login(vm.user)
     .then(function(user) {
       $rootScope.user = user;
-      $state.go('home');
+      $state.go('private.client.home');
     }, function(error) {
       $ionicLoading.hide();
       errorHandler({
@@ -33,7 +32,7 @@ angular.module('loginApp', [])
     Stamplay.User.signup(vm.user)
     .then(function(user) {
       $rootScope.user = user;
-      $state.go('home');
+      $state.go('private.client.home');
     }, function(error) {
       errorHandler({
         title : "<h4 class='center-align'>A Valid Email and Password is Required</h4>"
