@@ -19,7 +19,16 @@
 
 .no-bg-color {
   background-color: rgba(254, 249, 241, 0.8) !important;
-  border-bottom: 1px #717171;
+}
+
+label.no-bg-color {
+  border: solid 0.2px #e6e4e4 !important;
+  box-shadow: 2px 2px 1px #E6E4EE;
+}
+
+.margin {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .center {

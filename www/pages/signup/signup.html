@@ -5,25 +5,27 @@
         <img src="img/logo.png">
       </div>
 
-      <label class="item item-input no-bg-color">
+      <label class="item item-input no-bg-color margin">
         <span class="input-label"><i class="fa fa-user gray" aria-hidden="true"></i></span>
 
         <input type="text" placeholder="Nome" ng-model="account.user.name">
       </label>
 
-      <label class="item item-input no-bg-color">
+      <label class="item item-input no-bg-color margin">
         <span class="input-label"><i class="fa fa-envelope gray" aria-hidden="true"></i></span>
 
         <input type="text" placeholder="Email" ng-model="account.user.email" required="required">
       </label>
 
-      <label class="item item-input no-bg-color">
+      <label class="item item-input no-bg-color margin">
         <span class="input-label"><i class="fa fa-unlock-alt gray" aria-hidden="true"></i></span>
 
         <input type="password" ng-model="account.user.password" placeholder="Senha">
       </label>
 
-      <button class="button button-block button-assertive activated" ng-click="account.signup()">Criar Conta</button>
+      <div class="margin">
+        <button class="button button-block button-assertive activated" ng-click="account.signup()">Criar Conta</button>
+      </div>
 
       <p class="text-center">
         <a ui-sref="login">já possui uma conta?</a>
