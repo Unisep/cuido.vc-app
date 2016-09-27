@@ -49,6 +49,7 @@ angular.module('authApp', [])
     .then(function(user) {
       $rootScope.user = user;
       $ionicLoading.hide();
+      $state.go('login');
     }, function(error) {
       console.error(error);
       $ionicLoading.hide();

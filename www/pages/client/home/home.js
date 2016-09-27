@@ -4,5 +4,4 @@ angular.module('clientApp', [])
     function($state, $rootScope, $scope, $ionicLoading) {
 
   $ionicLoading.hide();
-
 }])

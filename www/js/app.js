@@ -30,18 +30,25 @@ App.run(function($ionicPlatform) {
         url: '/login',
         templateUrl: '/pages/login/login.html',
         controller: 'AccountController',
-        controllerAs : 'account'
+        controllerAs: 'account',
+        onEnter: checkLogged
     })
     .state('signup', {
         url: '/signup',
         templateUrl: '/pages/signup/signup.html',
         controller: 'AccountController',
-        controllerAs : 'account'
+        controllerAs: 'account',
+        onEnter: checkLogged
     })
     .state('private', {
         url: "/private",
         abstract: true,
-        template: '<ui-view/>'
+        template: '<ui-view/>',
+        onEnter: function($state, AccountService){
+          if(!AccountService.currentUser()){
+            $state.go('login');
+          }
+        }
     })
     .state('private.client', {
         url: '/private/client',
@@ -60,18 +67,15 @@ App.run(function($ionicPlatform) {
   $urlRouterProvider.otherwise('/login');
 })
 
-.controller('MainController', ['User', function($scope, User) {
-  User.getCurrent().then(function(data) {
-    if (data['_id']) {
-      $rootScope.loggedIn = true;
-      $rootScope.loggedUser.userId = data['_id'];
-      $rootScope.loggedUser.displayName = data['displayName'];
-      $rootScope.loggedUser.profileImg = data['profileImg'];
+function checkLogged($state, AccountService, $ionicLoading, $rootScope){
+  $ionicLoading.show();
+  AccountService.currentUser()
+    .then(function(value) {
+      if(value){
+        $rootScope.user = value;
+        $state.go('private.client.home');
+      }
 
-      $state.go('private.client.home');
-    } else {
-      $rootScope.loggedIn = false;
-      $state.go('login');
-    }
-  })
-}])
+      $ionicLoading.hide();
+    });
+  }

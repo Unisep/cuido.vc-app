@@ -2,7 +2,7 @@ angular.module('appServices', [])
 
 .factory('AccountService', ["$q", function($q) {
   return {
-    currentUser : function() {
+    currentUser: function() {
       var def = $q.defer();
       Stamplay.User.currentUser()
       .then(function(response) {
